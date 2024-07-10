@@ -1,13 +1,6 @@
-type Props = {
-  className?: string;
-  fill?: string;
-  color?: string;
-  width?: number;
-  strokeWidth?: number;
-  onClick?: React.MouseEventHandler<SVGSVGElement>;
-}
+import { iconProps } from "../icon/iconsProps"
 
-export function MenuIcon(props: React.PropsWithoutRef<Props>) {
+export function MenuIcon(props: React.PropsWithoutRef<iconProps>) {
   return (
     <svg
     viewBox="0 0 24 24"
@@ -20,6 +13,8 @@ export function MenuIcon(props: React.PropsWithoutRef<Props>) {
     strokeLinejoin="round"
     style={{cursor: 'pointer'}}
     className={props.className}
+    onMouseOver={(e)=> e.currentTarget.style.stroke = props.hoverColor || 'currentColor'}
+    onMouseLeave={(e)=> e.currentTarget.style.stroke = 'currentColor'}
     {...props}
     ><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg>
   )

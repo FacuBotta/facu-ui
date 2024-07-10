@@ -8,7 +8,12 @@ type Props = {
 export const Button = ( props: PropsWithChildren<Props> ) => {
   return (
     <button
-      className="px-4 py-1 bg-red-500 text-white rounded-md hover:bg-red-600"
+      style={
+        {
+          borderRadius: 10,
+          padding: '.5rem 1rem',
+        }
+      }
       {...props}
     >
       {props.children}
@@ -16,4 +21,6 @@ export const Button = ( props: PropsWithChildren<Props> ) => {
   )
 };
 // https://www.youtube.com/watch?v=T3NR6dpMZZY
+// https://www.youtube.com/watch?v=ESkD6Ouvs2s
+
 // https://www.youtube.com/watch?v=ESkD6Ouvs2s

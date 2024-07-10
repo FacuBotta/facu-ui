@@ -1,13 +1,6 @@
-type Props = {
-  className?: string;
-  fill?: string;
-  color?: string;
-  width?: number;
-  strokeWidth?: number;
-  onClick?: React.MouseEventHandler<SVGSVGElement>;
-}
+import { iconProps } from "../icon/iconsProps"
 
-export function SearchIcon(props: React.PropsWithoutRef<Props>) {
+export function SearchIcon(props: React.PropsWithoutRef<iconProps>) {
   return (
     <svg
     viewBox="0 0 24 24"
@@ -20,6 +13,8 @@ export function SearchIcon(props: React.PropsWithoutRef<Props>) {
     strokeLinejoin="round"
     style={{cursor: 'pointer'}}
     className={props.className}
+    onMouseOver={(e)=> e.currentTarget.style.stroke = props.hoverColor || 'currentColor'}
+    onMouseLeave={(e)=> e.currentTarget.style.stroke = 'currentColor'}
     {...props}
     ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
   )

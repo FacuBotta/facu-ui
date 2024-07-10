@@ -1,13 +1,6 @@
-type Props = {
-  className?: string;
-  fill?: string;
-  color?: string;
-  width?: number;
-  strokeWidth?: number;
-  onClick?: React.MouseEventHandler<SVGSVGElement>;
-}
+import { iconProps } from "../icon/iconsProps"
 
-export function FaceBookIcon(props: React.PropsWithoutRef<Props>) {
+export function FaceBookIcon(props: React.PropsWithoutRef<iconProps>) {
   return (
     <svg
     viewBox="0 0 24 24"
@@ -20,6 +13,8 @@ export function FaceBookIcon(props: React.PropsWithoutRef<Props>) {
     strokeLinejoin="round"
     style={{cursor: 'pointer'}}
     className={props.className}
+    onMouseOver={(e)=> e.currentTarget.style.stroke = props.hoverColor || 'currentColor'}
+    onMouseLeave={(e)=> e.currentTarget.style.stroke = 'currentColor'}
     {...props}
     ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
   )

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from './button';
+import { Button } from '../src/components/button/button';
 
 const meta: Meta<typeof Button> = {
   title: 'Button',
@@ -10,8 +10,8 @@ type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
   args: {
-    children: 'Login!',
-    className: 'bg-slate-200',
+    children: 'perrito!',
+    className: 'bg-yellow-500 border-2 border-black border-yellow-500 text-black',
     onClick: () => alert('cliqueadito'),
   },
 };
