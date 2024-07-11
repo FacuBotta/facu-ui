@@ -27,9 +27,10 @@ export const Password: Story = {
     label: 'Password',
     placeholder: 'testing',
     id: 'testing',
+    iconColor: 'white',
     width: '60%',
     type: 'password',
-    className: 'bg-slate-100 border-2 border-slate-300 rounded-lg p-2',
+    // className: 'bg-slate-100 border-2 border-slate-300 rounded-lg p-2',
   },
 };
 

@@ -24,8 +24,8 @@ export const svgProps = (props: iconProps) => {
     fill: filled,
     stroke: props.color || 'currentColor',
     strokeWidth: props.strokeWidth || 1,
-    strokeLinecap: "round", // this is not working, make a type error
-    strokeLinejoin: "round", // this is not working, make a type error
+    // strokeLinecap: "round",
+    // strokeLinejoin: "round",
     style: { cursor: props.cursor || 'pointer' },
     onMouseOver: (e: React.MouseEvent<SVGSVGElement>) => {
       if (props.filled) {
