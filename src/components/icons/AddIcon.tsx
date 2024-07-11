@@ -1,12 +1,14 @@
 import { iconProps } from "../icon/iconsProps"
 
 export function AddIcon(props: React.PropsWithoutRef<iconProps>) {
+  const filled = props.filled? 'currentColor' : 'none'
+
   return (
     <svg
     viewBox="0 0 24 24"
     width={props.width || '24'}
     height={props.width || '24'}
-    fill={props.fill || 'none'}
+    fill={filled}
     stroke={props.color || 'currentColor'}
     strokeWidth={props.strokeWidth || 1}
     strokeLinecap="round"
