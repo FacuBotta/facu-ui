@@ -9,6 +9,7 @@ export type iconProps = {
   hoverColor?: string;
   /** Width and height of the icon, default is 24px */
   width?: number;
+  cursor?: string;
   strokeWidth?: number;
   onClick?: React.MouseEventHandler<SVGSVGElement>;
   type?: 'instagram' | 'youtube' | 'search' | 'menu' | 'burgerMenu' | 'plus' | 'minus' | 'heart' | 'star' | 'send' | 'userOff' | 'message' | 'add' | 'addUser' | 'addPhoto' | 'edit' | 'logIn' | 'logOut' | 'alarm' | 'delete' | 'user' | 'linkedIn' | 'home' | 'calendar' | 'calendarPlus' | 'eye' | 'eyeOff' | 'mapSearch' | 'mapPin' | 'infoCircle' | 'phone' | 'bell' | 'twitter' | 'faceBook' | 'tikTok' | 'discord';
@@ -23,10 +24,20 @@ export const svgProps = (props: iconProps) => {
     fill: filled,
     stroke: props.color || 'currentColor',
     strokeWidth: props.strokeWidth || 1,
-    // strokeLinecap: "round", // this is not working, make a type error
-    // strokeLinejoin: "round", // this is not working, make a type error
-    style: { cursor: 'pointer' },
-    onMouseOver: (e: React.MouseEvent<SVGSVGElement>) => e.currentTarget.style.stroke = props.hoverColor || 'currentColor',
-    onMouseLeave: (e: React.MouseEvent<SVGSVGElement>) => e.currentTarget.style.stroke = 'currentColor',
+    strokeLinecap: "round", // this is not working, make a type error
+    strokeLinejoin: "round", // this is not working, make a type error
+    style: { cursor: props.cursor || 'pointer' },
+    onMouseOver: (e: React.MouseEvent<SVGSVGElement>) => {
+      if (props.filled) {
+        e.currentTarget.style.fill = props.hoverColor || 'currentColor'
+      }
+      e.currentTarget.style.stroke = props.hoverColor || 'currentColor'
+    },
+    onMouseLeave: (e: React.MouseEvent<SVGSVGElement>) => {
+      if (props.filled) {
+        e.currentTarget.style.fill = 'currentColor'
+      }
+      e.currentTarget.style.stroke = 'currentColor'
+    },
   }
 };

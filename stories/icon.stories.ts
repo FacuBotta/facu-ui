@@ -11,19 +11,20 @@ type Story = StoryObj<typeof Icon>;
 
 export const Primary: Story = {
   args: {
-    color: 'black',
-    type: 'addPhoto',
+    color: 'white',
+    type: 'burgerMenu',
+    width: 100,
+    filled: true,
+    hoverColor: '#ff0394',
+    onClick: () => alert('cliqueadito'),
+  },
+};
+export const Secondary: Story = {
+  args: {
+    color: 'white',
+    type: 'linkedIn',
+    width: 100,
     hoverColor: 'red',
     onClick: () => alert('cliqueadito'),
   },
 };
-/* 
-export const Secondary: Story = {
-  args: {
-    type: 'mapPin',
-    color: 'black',
-    hoverColor: 'blue',
-    onClick: () => alert('cliqueadito'),
-  },
-};
-*/
