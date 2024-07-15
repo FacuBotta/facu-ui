@@ -16,8 +16,8 @@ export const Text: Story = {
     error: { message: 'The name is required', value: false },
     placeholder: 'testing',
     id: 'testing',
-    width: '100%',
-    className: 'bg-slate-100 border-2 border-slate-300 rounded-lg p-2 outline-blue-500',
+    width: '20%',
+    // className: 'bg-slate-100 border-2 border-slate-300 rounded-lg p-2 outline-blue-500',
   },
 };
 
@@ -26,20 +26,11 @@ export const Password: Story = {
     required: true,
     label: 'Password',
     placeholder: 'testing',
+    // error: { message: 'The name is required', value: true},
+    regexp: { message: 'Characters \'@ - _ ; " \' are not allowed', pattern: /[@-_;"']/ },
     id: 'testing',
-    iconColor: 'white',
-    width: '60%',
+    width: '50%',
     type: 'password',
-    // className: 'bg-slate-100 border-2 border-slate-300 rounded-lg p-2',
-  },
-};
-
-export const serach: Story = {
-  args: {
-    placeholder: 'testing',
-    id: 'testing',
-    width: '60%',
-    type: 'search',
-    className: 'bg-slate-100 border-2 border-slate-300 rounded-lg p-2',
+    className: 'bg-slate-d100 border-2 border-slate-300 rounded-lg p-2',
   },
 };
