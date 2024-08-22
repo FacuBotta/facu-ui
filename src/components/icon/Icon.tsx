@@ -1,3 +1,5 @@
+"use client";
+
 import { InstagramIcon } from '../icons/InstagramIcon';
 import { YouTubeIcon } from '../icons/YouTubeIcon';
 import { SearchIcon } from '../icons/SearchIcon';
@@ -34,11 +36,17 @@ import { TwitterIcon } from '../icons/TwitterIcon';
 import { FaceBookIcon } from '../icons/FaceBookIcon';
 import { TikTokIcon } from '../icons/TikTokIcon';
 import { DiscordIcon } from '../icons/DiscordIcon';
+import { DarkThemeIcon } from '../icons/DarkThemeIcon';
+import { LightThemeIcon } from '../icons/LightThemeIcon';
 
 import { iconProps } from './iconsProps';
 
 export function Icon(props: React.PropsWithoutRef<iconProps>) {
   switch (props.type) {
+    case 'lightTheme':
+      return <LightThemeIcon {...props} />;
+    case 'darkTheme': 
+      return <DarkThemeIcon {...props} />
     case 'instagram':
       return <InstagramIcon {...props} />;
     case 'youtube':

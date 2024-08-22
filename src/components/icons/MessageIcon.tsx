@@ -1,3 +1,5 @@
+"use client";
+
 import { iconProps, svgProps } from "../icon/iconsProps";
 
 export function MessageIcon(props: React.PropsWithoutRef<iconProps>) {

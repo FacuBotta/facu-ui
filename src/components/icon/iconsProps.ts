@@ -1,3 +1,4 @@
+"use client";
 
 export type iconProps = {
   className?: string;
@@ -12,7 +13,7 @@ export type iconProps = {
   cursor?: string;
   strokeWidth?: number;
   onClick?: React.MouseEventHandler<SVGSVGElement>;
-  type?: 'instagram' | 'youtube' | 'search' | 'menu' | 'burgerMenu' | 'plus' | 'minus' | 'heart' | 'star' | 'send' | 'userOff' | 'message' | 'add' | 'addUser' | 'addPhoto' | 'edit' | 'logIn' | 'logOut' | 'alarm' | 'delete' | 'user' | 'linkedIn' | 'home' | 'calendar' | 'calendarPlus' | 'eye' | 'eyeOff' | 'mapSearch' | 'mapPin' | 'infoCircle' | 'phone' | 'bell' | 'twitter' | 'faceBook' | 'tikTok' | 'discord';
+  type?: 'lightTheme' | 'darkTheme' | 'instagram' | 'youtube' | 'search' | 'menu' | 'burgerMenu' | 'plus' | 'minus' | 'heart' | 'star' | 'send' | 'userOff' | 'message' | 'add' | 'addUser' | 'addPhoto' | 'edit' | 'logIn' | 'logOut' | 'alarm' | 'delete' | 'user' | 'linkedIn' | 'home' | 'calendar' | 'calendarPlus' | 'eye' | 'eyeOff' | 'mapSearch' | 'mapPin' | 'infoCircle' | 'phone' | 'bell' | 'twitter' | 'faceBook' | 'tikTok' | 'discord';
 }
 
 export const svgProps = (props: iconProps) => {
@@ -24,8 +25,8 @@ export const svgProps = (props: iconProps) => {
     fill: filled,
     stroke: props.color || 'currentColor',
     strokeWidth: props.strokeWidth || 1,
-    // strokeLinecap: "round",
-    // strokeLinejoin: "round",
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
     style: { cursor: props.cursor || 'pointer' },
     onMouseOver: (e: React.MouseEvent<SVGSVGElement>) => {
       if (props.filled) {

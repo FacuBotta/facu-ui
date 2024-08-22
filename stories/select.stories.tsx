@@ -13,12 +13,16 @@ type Story = StoryObj<typeof Select>;
 export const Text: Story = {
   args: {
     width: '150px',
-    className: 'bg-slate-100 border-2 border-slate-300 rounded-lg p-2 outline-blue-500',
+    label: 'Select',
+    required: true,
     children: (
       <>
         <option>Option 1</option>
         <option>Option 2</option>
         <option>Option 3</option>
+        <option>Option 4</option>
+        <option>Option 5</option>
+        <option>Option 6</option>
       </>
     )
     

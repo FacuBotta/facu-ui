@@ -1,3 +1,5 @@
+"use client";
+
 import { iconProps, svgProps } from "../icon/iconsProps";
 
 export function InstagramIcon(props: React.PropsWithoutRef<iconProps>) {

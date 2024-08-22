@@ -19,9 +19,20 @@ export const Primary: Story = {
     onClick: () => alert('cliqueadito'),
   },
 };
-export const Secondary: Story = {
+export const Themes: Story = {
   args: {
-    color: 'white',
+    color: 'red',
+    type: 'lightTheme',
+    width: 100,
+    strokeWidth: 2,
+    filled: false,
+    onClick: () => alert('cliqueadito'),
+  },
+}
+export const LinkedIn: Story = {
+  args: {
+    color: 'black',
+    strokeWidth: 2,
     type: 'linkedIn',
     width: 100,
     hoverColor: 'red',
