@@ -1,123 +1,129 @@
 "use client";
 
-import { InstagramIcon } from '../icons/InstagramIcon';
-import { YouTubeIcon } from '../icons/YouTubeIcon';
-import { SearchIcon } from '../icons/SearchIcon';
-import { MenuIcon } from '../icons/MenuIcon';
-import { BurgerMenuIcon } from '../icons/BurgerMenuIcon';
-import { PlusIcon } from '../icons/PlusIcon';
-import { MinusIcon } from '../icons/MinusIcon';
-import { HeartIcon } from '../icons/HeartIcon';
-import { StarIcon } from '../icons/StarIcon';
-import { SendIcon } from '../icons/SendIcon';
-import { UserOffIcon } from '../icons/UserOffIcon';
-import { MessageIcon } from '../icons/MessageIcon';
-import { AddIcon } from '../icons/AddIcon';
-import { AddUserIcon } from '../icons/AddUserIcon';
-import { AddPhotoIcon } from '../icons/AddPhotoIcon';
-import { EditIcon } from '../icons/EditIcon';
-import { LogInIcon } from '../icons/LogInIcon';
-import { LogOutIcon } from '../icons/LogOutIcon';
-import { AlarmIcon } from '../icons/AlarmIcon';
-import { DeleteIcon } from '../icons/DeleteIcon';
-import { UserIcon } from '../icons/UserIcon';
-import { LinkedInIcon } from '../icons/LinkedInIcon';
-import { HomeIcon } from '../icons/HomeIcon';
-import { CalendarIcon } from '../icons/CalendarIcon';
-import { CalendarPlusIcon } from '../icons/CalendarPlusIcon';
-import { EyeIcon } from '../icons/EyeIcon';
-import { EyeOffIcon } from '../icons/EyeOffIcon';
-import { MapSearchIcon } from '../icons/MapSearchIcon';
-import { MapPinIcon } from '../icons/MapPinIcon';
-import { InfoCircleIcon } from '../icons/InfoCircleIcon';
-import { PhoneIcon } from '../icons/PhoneIcon';
-import { BellIcon } from '../icons/BellIcon';
-import { TwitterIcon } from '../icons/TwitterIcon';
-import { FaceBookIcon } from '../icons/FaceBookIcon';
-import { TikTokIcon } from '../icons/TikTokIcon';
-import { DiscordIcon } from '../icons/DiscordIcon';
-import { DarkThemeIcon } from '../icons/DarkThemeIcon';
-import { LightThemeIcon } from '../icons/LightThemeIcon';
+import { InstagramIcon } from "../icons/InstagramIcon";
+import { YouTubeIcon } from "../icons/YouTubeIcon";
+import { SearchIcon } from "../icons/SearchIcon";
+import { MenuIcon } from "../icons/MenuIcon";
+import { BurgerMenuIcon } from "../icons/BurgerMenuIcon";
+import { PlusIcon } from "../icons/PlusIcon";
+import { MinusIcon } from "../icons/MinusIcon";
+import { HeartIcon } from "../icons/HeartIcon";
+import { StarIcon } from "../icons/StarIcon";
+import { SendIcon } from "../icons/SendIcon";
+import { UserOffIcon } from "../icons/UserOffIcon";
+import { MessageIcon } from "../icons/MessageIcon";
+import { AddIcon } from "../icons/AddIcon";
+import { AddUserIcon } from "../icons/AddUserIcon";
+import { AddPhotoIcon } from "../icons/AddPhotoIcon";
+import { EditIcon } from "../icons/EditIcon";
+import { LogInIcon } from "../icons/LogInIcon";
+import { LogOutIcon } from "../icons/LogOutIcon";
+import { AlarmIcon } from "../icons/AlarmIcon";
+import { DeleteIcon } from "../icons/DeleteIcon";
+import { UserIcon } from "../icons/UserIcon";
+import { LinkedInIcon } from "../icons/LinkedInIcon";
+import { HomeIcon } from "../icons/HomeIcon";
+import { CalendarIcon } from "../icons/CalendarIcon";
+import { CalendarPlusIcon } from "../icons/CalendarPlusIcon";
+import { EyeIcon } from "../icons/EyeIcon";
+import { EyeOffIcon } from "../icons/EyeOffIcon";
+import { MapSearchIcon } from "../icons/MapSearchIcon";
+import { MapPinIcon } from "../icons/MapPinIcon";
+import { InfoCircleIcon } from "../icons/InfoCircleIcon";
+import { PhoneIcon } from "../icons/PhoneIcon";
+import { BellIcon } from "../icons/BellIcon";
+import { TwitterIcon } from "../icons/TwitterIcon";
+import { FaceBookIcon } from "../icons/FaceBookIcon";
+import { TikTokIcon } from "../icons/TikTokIcon";
+import { DiscordIcon } from "../icons/DiscordIcon";
+import { DarkThemeIcon } from "../icons/DarkThemeIcon";
+import { LightThemeIcon } from "../icons/LightThemeIcon";
 
-import { iconProps } from './iconsProps';
+import { iconProps } from "./iconsProps";
+import { DraggableIcon } from "../icons/DraggableIcon";
+import { GoBackIcon } from "../icons/GoBackIcon";
 
 export function Icon(props: React.PropsWithoutRef<iconProps>) {
   switch (props.type) {
-    case 'lightTheme':
+    case "draggable":
+      return <DraggableIcon {...props} />;
+    case "goBack":
+      return <GoBackIcon {...props} />;
+    case "lightTheme":
       return <LightThemeIcon {...props} />;
-    case 'darkTheme': 
-      return <DarkThemeIcon {...props} />
-    case 'instagram':
+    case "darkTheme":
+      return <DarkThemeIcon {...props} />;
+    case "instagram":
       return <InstagramIcon {...props} />;
-    case 'youtube':
+    case "youtube":
       return <YouTubeIcon {...props} />;
-    case 'search':
+    case "search":
       return <SearchIcon {...props} />;
-    case 'menu':
+    case "menu":
       return <MenuIcon {...props} />;
-    case 'burgerMenu':
+    case "burgerMenu":
       return <BurgerMenuIcon {...props} />;
-    case 'plus':
+    case "plus":
       return <PlusIcon {...props} />;
-    case 'minus':
+    case "minus":
       return <MinusIcon {...props} />;
-    case 'heart':
+    case "heart":
       return <HeartIcon {...props} />;
-    case 'star':
+    case "star":
       return <StarIcon {...props} />;
-    case 'send':
+    case "send":
       return <SendIcon {...props} />;
-    case 'userOff':
+    case "userOff":
       return <UserOffIcon {...props} />;
-    case 'message':
+    case "message":
       return <MessageIcon {...props} />;
-    case 'add':
+    case "add":
       return <AddIcon {...props} />;
-    case 'addUser':
+    case "addUser":
       return <AddUserIcon {...props} />;
-    case 'addPhoto':
+    case "addPhoto":
       return <AddPhotoIcon {...props} />;
-    case 'edit':
+    case "edit":
       return <EditIcon {...props} />;
-    case 'logIn':
+    case "logIn":
       return <LogInIcon {...props} />;
-    case 'logOut':
+    case "logOut":
       return <LogOutIcon {...props} />;
-    case 'alarm':
+    case "alarm":
       return <AlarmIcon {...props} />;
-    case 'delete':
+    case "delete":
       return <DeleteIcon {...props} />;
-    case 'user':
+    case "user":
       return <UserIcon {...props} />;
-    case 'linkedIn':
+    case "linkedIn":
       return <LinkedInIcon {...props} />;
-    case 'home':
+    case "home":
       return <HomeIcon {...props} />;
-    case 'calendar':
+    case "calendar":
       return <CalendarIcon {...props} />;
-    case 'calendarPlus':
+    case "calendarPlus":
       return <CalendarPlusIcon {...props} />;
-    case 'eye':
+    case "eye":
       return <EyeIcon {...props} />;
-    case 'eyeOff':
+    case "eyeOff":
       return <EyeOffIcon {...props} />;
-    case 'mapSearch':
+    case "mapSearch":
       return <MapSearchIcon {...props} />;
-    case 'mapPin':
+    case "mapPin":
       return <MapPinIcon {...props} />;
-    case 'infoCircle':
+    case "infoCircle":
       return <InfoCircleIcon {...props} />;
-    case 'phone':
+    case "phone":
       return <PhoneIcon {...props} />;
-    case 'bell':
+    case "bell":
       return <BellIcon {...props} />;
-    case 'twitter':
+    case "twitter":
       return <TwitterIcon {...props} />;
-    case 'faceBook':
+    case "faceBook":
       return <FaceBookIcon {...props} />;
-    case 'tikTok':
+    case "tikTok":
       return <TikTokIcon {...props} />;
-    case 'discord':
+    case "discord":
       return <DiscordIcon {...props} />;
   }
 }
