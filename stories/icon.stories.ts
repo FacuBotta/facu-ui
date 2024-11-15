@@ -1,5 +1,5 @@
-import { Icon } from '../src/components/icon/Icon';
 import type { Meta, StoryObj } from '@storybook/react';
+import { Icon } from '../src/components/icon/Icon';
 
 const meta: Meta<typeof Icon> = {
   title: 'Icon',
@@ -22,13 +22,13 @@ export const Primary: Story = {
 export const Themes: Story = {
   args: {
     color: 'red',
-    type: 'lightTheme',
+    type: 'sun',
     width: 100,
     strokeWidth: 2,
     filled: false,
     onClick: () => alert('cliqueadito'),
   },
-}
+};
 export const LinkedIn: Story = {
   args: {
     color: 'black',
