@@ -1,11 +1,17 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Icon } from '../icon/Icon';
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  /** The width of the input, can be a string or number */
-  width?: string | number;
+interface InputProps
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'> {
+  /**
+   * The width of the input, most to be a string ('200px', '50%', etc)
+   * Default is '100%' */
+  /**
+   * If you prefer to pass this in the class property you will need to add the important keyword to the width property
+   */
+  width?: string;
   /** The color of the label, text input, and the password icon, default is currentColor */
   color?: string;
   /** The label to show above the input */
@@ -25,7 +31,7 @@ interface Error {
   value: boolean;
 }
 
-export const Input = React.forwardRef<HTMLInputElement, InputProps>(
+export const PasswordInput = React.forwardRef<HTMLInputElement, InputProps>(
   (props, ref) => {
     const [type, setType] = useState<'text' | 'password'>('password');
     const [warning, setWarning] = useState<Warning>({
@@ -37,6 +43,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       value: props.error?.value || false,
     });
 
+    // Setting the warning state when the regexp don't match in any keydown
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       if (props.regexp) {
         const { pattern } = props.regexp;
@@ -49,9 +56,19 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       }
     };
 
+    // Hide or show the password when user click on the eye icon
     const handleVisibilityChange = () => {
       setType(type === 'password' ? 'text' : 'password');
     };
+
+    // Setting the error state when the error prop changes from outside
+    useEffect(() => {
+      setError({
+        message: props.error?.message || '',
+        value: props.error?.value || false,
+      });
+    }, [props.error]);
+
     return (
       <label
         htmlFor={props.id}
@@ -62,8 +79,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         }}
       >
         <p className="text-sm pl-2">
-          {props.label}{' '}
-          {props.required && <span className="text-red-500">*</span>}
+          {props.label || 'Password'} {<span className="text-red-500">*</span>}
         </p>
         <div className="flex relative">
           <input
@@ -79,29 +95,27 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             }}
             required={props.required || false}
             placeholder={props.placeholder || ''}
-            type={type || 'password'}
+            type={'password'}
             ref={ref}
             onChange={(e) => handleChange(e)}
           />
-          {props.type === 'password' && (
-            <div className="absolute right-2 h-full flex items-center">
-              {type === 'password' ? (
-                <Icon
-                  type="eye"
-                  cursor="pointer"
-                  color={props.color || 'currentcolor'}
-                  onClick={() => handleVisibilityChange()}
-                />
-              ) : (
-                <Icon
-                  type="eyeOff"
-                  cursor="pointer"
-                  color={props.color || 'currentcolor'}
-                  onClick={() => handleVisibilityChange()}
-                />
-              )}
-            </div>
-          )}
+          <div className="absolute right-2 h-full flex items-center">
+            {type === 'password' ? (
+              <Icon
+                type="eye"
+                cursor="pointer"
+                color={props.color || 'currentcolor'}
+                onClick={() => handleVisibilityChange()}
+              />
+            ) : (
+              <Icon
+                type="eyeOff"
+                cursor="pointer"
+                color={props.color || 'currentcolor'}
+                onClick={() => handleVisibilityChange()}
+              />
+            )}
+          </div>
         </div>
         {error.value && (
           <p className="text-red-500 ml-2">
@@ -109,7 +123,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           </p>
         )}
         {props.regexp && warning.value && (
-          <p className="text-orange-500-500 ml-2">
+          <p className="text-orange-600 ml-2">
             {props.regexp.message || "The password doesn't match the pattern"}
           </p>
         )}
